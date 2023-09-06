@@ -1,0 +1,36 @@
+.cursor-circle{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transform: translate(calc(-50%), calc(-50%));
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0.1px solid rgba(186, 196, 191);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: 0.5s, 0.3s, 0.3s, 0.3s, 0.08s;
+    transition-property: opacity, width, height, background-color, transform;
+}
+.cursor-point{
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    top: 0px;
+    left: 0px;
+    transform: translate(calc(-50%+ 100px), calc(-50%));
+    background-color: #bac4bf;
+    z-index: 10;
+    opacity: 0;
+    transition: 0.5s opacity;
+    pointer-events: none;
+}
+.cursor-circle.biggerCircle{
+    width: 70px;
+    height: 70px;
+    background-color: rgba(105, 105, 105, 0.4);
+
+}

@@ -1,11 +1,15 @@
-import './App.css'
-import MainPage from './components/MainPage/MainPage'
+import './App.css';
+import Cursor from './components/Cursor/Cursor';
+import MainPage from './components/MainPage/MainPage';
 
 function App() {
 
   return (
     <>
-      <MainPage/>
+    <Cursor/>
+    <main>
+      <MainPage />
+    </main>
     </>
   )
 }
