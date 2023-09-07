@@ -26,8 +26,7 @@ const MainPage = () => {
             }, 1.5).from(".hide", {
                 opacity: 0,
             }, 1.5)
-            console.log(timeline.endTime())
-            
+
         });
 
         function getYDistance(el) {
@@ -43,96 +42,61 @@ const MainPage = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-          const imageWrap = document.querySelector(".image-wrap");
-          if (imageWrap) {
-            imageWrap.style.pointerEvents = "auto";
-          }
+            const imageWrap = document.querySelector(".image-wrap");
+            if (imageWrap) {
+                imageWrap.style.pointerEvents = "auto";
+            }
         }, 2830);
-    
+
         return () => {
-          clearTimeout(timer);
+            clearTimeout(timer);
         };
-      }, []);
+    }, []);
 
     useEffect(() => {
         const handleMouseMove = (e) => {
-          const rect = e.target.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-    
-          const xMoving = x - e.target.clientWidth / 2;
-          const yMoving = y - e.target.clientHeight / 2;
-    
-          const newPosition = `calc(50% + ${xMoving * xSpeed}px) calc(58% + ${yMoving * ySpeed}px)`;
-          setBackgroundPosition(newPosition);
+            const rect = e.target.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const xMoving = x - e.target.clientWidth / 2;
+            const yMoving = y - e.target.clientHeight / 2;
+
+            const newPosition = `calc(50% + ${xMoving * xSpeed}px) calc(58% + ${yMoving * ySpeed}px)`;
+            setBackgroundPosition(newPosition);
         };
-    
+
         const handleMouseEnter = () => {
-          // Agrega la transición al entrar
-          const imageWrap = document.querySelector(".image-wrap");
-          imageWrap.style.transition = ".2s background-position";
-    
-          // Limpia la transición después de 200 ms
-          setTimeout(() => {
-            imageWrap.style.transition = "0s background-position";
-          }, 200);
+            const imageWrap = document.querySelector(".image-wrap");
+            imageWrap.style.transition = ".2s background-position";
+
+            setTimeout(() => {
+                imageWrap.style.transition = "0s background-position";
+            }, 200);
         };
-    
+
         const handleMouseLeave = () => {
-          // Agrega la transición al salir
-          const imageWrap = document.querySelector(".image-wrap");
-          imageWrap.style.transition = ".5s background-position";
-          imageWrap.style.backgroundPosition = "50% 58%";
+            const imageWrap = document.querySelector(".image-wrap");
+            imageWrap.style.transition = ".5s background-position";
+            imageWrap.style.backgroundPosition = "50% 58%";
         };
-    
+
         const imageWrap = document.querySelector(".image-wrap");
         imageWrap.addEventListener("mousemove", handleMouseMove);
         imageWrap.addEventListener("mouseenter", handleMouseEnter);
         imageWrap.addEventListener("mouseleave", handleMouseLeave);
-    
+
         return () => {
-          imageWrap.removeEventListener("mousemove", handleMouseMove);
-          imageWrap.removeEventListener("mouseenter", handleMouseEnter);
-          imageWrap.removeEventListener("mouseleave", handleMouseLeave);
+            imageWrap.removeEventListener("mousemove", handleMouseMove);
+            imageWrap.removeEventListener("mouseenter", handleMouseEnter);
+            imageWrap.removeEventListener("mouseleave", handleMouseLeave);
         };
-      }, []);
-
-
-
-    //   image_wrap.addEventListener('mouseover', ()=>{
-    //     image_wrap.style.transition = ".2s background-position";
-    //     setTimeout(()=>{
-    //         image_wrap.style.transition = "0s background-position"
-    //     }, 200)
-    //   })
-    //   image_wrap.addEventListener('mouseout', ()=>{
-    //     image_wrap.style.transition = ".5s background-position";
-    //     image_wrap.style.backgroundPosition = "50% 58%";
-    //   })
-
-
-
-    // const image_wrap = document.querySelector(".image-wrap")
-
-    // image_wrap.addEventListener("mousemove", (e) => {
-    //     let rect = image_wrap.getBoundingClientRect();
-    //     let x = e.clientX - rect.left;
-    //     let y = e.clientY - rect.top;
-
-    //     let xSpeed = 0.008;
-    //     let ySpeed = 0.02;
-
-    //     let xMoving = x - image_wrap.clientWidth / 2;
-    //     let yMoving = y - image_wrap.clientHeight / 2;
-
-    //     image_wrap.style.backgroundPosition = `calc(50% + ${xMoving * xSpeed}px) calc(58% + ${yMoving * ySpeed}px)`;
-    // })
+    }, []);
 
 
     return (
-        <>
-
-            <nav className='hide'>
+        <div className='heroWrapper'>
+            <nav className='mainNav hide'>
                 <img src="/img/signature.png" alt="" className='signature getHover' />
                 <ul>
                     <li className="nav-link">
@@ -151,9 +115,9 @@ const MainPage = () => {
             <span className="scroll hide">Scroll Down</span>
             <span className="line hide"></span>
             <div className='bottom-section hide'>
-                <p>                                                                    {/*TRANSFORMAR A SPAN! */}
+                <span>
                     <i className='bx bx-map' ></i> Located in England
-                </p>
+                </span>
                 <ul className="social-media">
                     <li>
                         <a href="#">
@@ -172,7 +136,7 @@ const MainPage = () => {
                     </li>
                 </ul>
             </div>
-        </>
+        </div>
     )
 }
 

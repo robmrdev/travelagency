@@ -8,7 +8,7 @@
     background-color: transparent;
     border-radius: 50%;
     border: 0.1px solid rgba(186, 196, 191);
-    z-index: 10;
+    z-index: 999999;
     opacity: 0;
     pointer-events: none;
     transition-duration: 0.5s, 0.3s, 0.3s, 0.3s, 0.08s;
@@ -23,7 +23,7 @@
     left: 0px;
     transform: translate(calc(-50%+ 100px), calc(-50%));
     background-color: #bac4bf;
-    z-index: 10;
+    z-index: 999999;
     opacity: 0;
     transition: 0.5s opacity;
     pointer-events: none;

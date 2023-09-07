@@ -1,3 +1,16 @@
+.heroWrapper{
+    position: relative;  
+    min-height: 750px;
+    height: 100vh;
+    overflow: hidden;
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d2927;
+    width: 100%;
+}
 .signature {
     width: 100px;
     grid-column-start: 2;
@@ -5,7 +18,7 @@
 /* .hide{
     opacity: 0;
 } */
-nav {
+.mainNav {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
@@ -13,7 +26,7 @@ nav {
     width: 100%;
 }
 
-nav ul {
+.mainNav ul {
     display: flex;
     justify-self: flex-end;
 }
@@ -45,7 +58,7 @@ nav ul {
     bottom: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(50%);
-    background-image: url(./img/mainProfile.png);
+    background-image: url(/img/mainProfile.png);
     background-size: 150%;
     background-position: 50% 58%;
     background-repeat: no-repeat;
@@ -75,14 +88,14 @@ nav ul {
     width: 100%;
 }
 
-.bottom-section p {
+.bottom-section span {
     color: #777;
     font-weight: 300;
     display: flex;
     align-items: center;
 }
 
-.bottom-section p i {
+.bottom-section span i {
     color: #f3c892;
     font-size: 1.2rem;
     margin-right: 1rem;
