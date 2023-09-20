@@ -1,9 +1,10 @@
 import React, { useLayoutEffect, useState, useEffect } from 'react'
 import { gsap } from 'gsap';
+import movData from '../../assets/data.json'
 import './MainPage.css';
 
 const MainPage = () => {
-
+    console.log(movData)
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             let timeline = gsap.timeline({

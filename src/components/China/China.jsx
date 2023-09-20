@@ -1,9 +1,8 @@
 import './China.css'
-import { useEffect, useState, useLayoutEffect, useRef } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 
 const China = () => {
-
 
 
     let timeline = gsap.timeline();
@@ -49,7 +48,7 @@ const China = () => {
 
     useEffect(() => {
         const chinaMain = document.querySelector('.chinaMain');
-
+        
         const handleMouseMove = (event) => {
             if(timeline.isActive()) return;
             const { clientX, clientY } = event;
@@ -73,8 +72,6 @@ const China = () => {
 
     useEffect(() => {
         const parallaxElements = document.querySelectorAll('.parallax');
-        
-        
         parallaxElements.forEach((el) => {
             let speedx = el.dataset.speedx;
             let speedy = el.dataset.speedy;
@@ -87,7 +84,21 @@ const China = () => {
         });
     }, [mouseOffset]);
 
-
+    // useEffect(() => {
+      
+    //     const chinaWrapper = document.querySelector('.chinaMain');
+        
+    //     if(window.innerWidth >= 725){
+    //         chinaWrapper.style.maxHeight = `${window.innerWidth * 0.6}px`
+    //     }else{
+    //         chinaWrapper.style.maxHeight = '100vh'
+    //     }
+    
+    // //   return () => {
+    // //     second
+    // //   }
+    // }, [])
+    
 
 
     return (
@@ -113,12 +124,14 @@ const China = () => {
                     </ul>
                 </nav>
             </header>
-            <main className='chinaMain'>
+            <main>
+                <section className='chinaMain'>
                 <div className="vignette hide"></div>
+
                 <img src="/img/china/background.png" alt="" data-fromdata="100%" data-rotation="0" data-speedx="0.3" data-speedy="0.33" data-speedz= "0" className='parallax bg-img' />
                 <img src="/img/china/fog_7.png" alt="" data-fromdata="150%" data-rotation="0" data-speedx="0.27" data-speedy="0.32" data-speedz= "0" className='parallax fog-7' />
                 <img src="/img/china/mountain_10.png" alt="" data-fromdata="180%" data-rotation="0" data-speedx="0.195" data-speedy="0.305" data-speedz= "0" className='parallax mountain-10' />
-                <img src="/img/china/fog_6.png" alt="" data-fromdata="150%" data-rotation="0" data-speedx="0.1" data-speedy="0.28" data-speedz= "0" className='parallax fog-6' />
+                {/* <img src="/img/china/fog_6.png" alt="" data-fromdata="150%" data-rotation="0" data-speedx="0.1" data-speedy="0.28" data-speedz= "0" className='parallax fog-6' /> */}
                 <img src="/img/china/mountain_9.png" alt="" data-fromdata="200%" data-rotation="0.02" data-speedx="0.125" data-speedy="0.155" data-speedz= "0.15" className='parallax mountain-9' />
                 <img src="/img/china/mountain_8.png" alt="" data-fromdata="200%" data-rotation="0.02" data-speedx="0.1" data-speedy="0.11" data-speedz= "0" className='parallax mountain-8' />
                 <img src="/img/china/fog_5.png" alt="" data-fromdata="150%" data-rotation="0" data-speedx="0.16" data-speedy="0.105" data-speedz= "0" className='parallax fog-5' />
@@ -128,7 +141,7 @@ const China = () => {
                     <h1>Zhangjiajie</h1>
                 </div>
                 <img src="/img/china/mountain_6.png" alt="" data-fromdata="210%" data-rotation="0.12" data-speedx="0.065" data-speedy="0.05" data-speedz= "0.05" className='parallax mountain-6' />
-                <img src="/img/china/fog_4.png" alt="" data-fromdata="150%" data-rotation="0" data-speedx="0.135" data-speedy="0.03" data-speedz= "0" className='parallax fog-4' />
+                {/* <img src="/img/china/fog_4.png" alt="" data-fromdata="150%" data-rotation="0" data-speedx="0.135" data-speedy="0.03" data-speedz= "0" className='parallax fog-4' /> */}
                 <img src="/img/china/mountain_5.png" alt="" data-fromdata="240%" data-rotation="0.1" data-speedx="0.07" data-speedy="0.035" data-speedz= "0.13" className='parallax mountain-5' />
                 <img src="/img/china/fog_3.png" alt="" data-fromdata="150%" data-rotation="0" data-speedx="0.11" data-speedy="0.018" data-speedz= "0" className='parallax fog-3' />
                 <img src="/img/china/mountain_4.png" alt="" data-fromdata="300%" data-rotation="0.14" data-speedx="0.059" data-speedy="0.024" data-speedz= "0.35" className='parallax mountain-4' />
@@ -139,6 +152,14 @@ const China = () => {
                 <img src="/img/china/sun_rays.png" alt="" className='sun-rays hide' />
                 <img src="/img/china/black_shadow.png" alt="" className='black-shadow hide' />
                 <img src="/img/china/fog_1.png" alt="" data-fromdata="150%" data-rotation="0" data-speedx="0.12" data-speedy="0.01" data-speedz= "0" className='parallax fog-1' />
+            
+            </section>
+            
+            <div className='other'>
+                asdsad
+            </div>
+            
+            
             </main>
         </div>
     )
